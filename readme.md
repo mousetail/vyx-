@@ -4,6 +4,8 @@ This is a attempt to compress vyxal code. It's a huffman tree compressor trained
 
 # How good is it?
 
+Medium
+
 ```
                  Orig       Comp       Diff       Ratio
 mean            32.69      27.97      -4.72     0.9717

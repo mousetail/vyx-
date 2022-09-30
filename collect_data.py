@@ -9,7 +9,7 @@ vyxal_characters = """'Jk\xaf\u01d4\u1e03\u0226"2=%/\u1e44\u2026\xa3D\u1e8bY.\u2
 post_filter = "!7gW7W8.hCz.w3RaMu5gZJ)KKPzO4pFALfq"
 page_size = 30
 
-if False:
+if True:
     page = 1
     with open("post_ids.txt", "a") as f:
         items = True
