@@ -24,7 +24,7 @@ def analyze_corpus(lenghts):
 def get_original_data():
     with open("code_json.json") as f:
         orignal_data = json.load(f)
-    return [i for i in [''.join(i for i in j if i in vyxal_characters) for j in orignal_data] if len(i) < 30]
+    return [''.join(i for i in j if i in vyxal_characters) for j in orignal_data]
 
 
 def get_forest():
