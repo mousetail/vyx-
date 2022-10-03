@@ -55,11 +55,9 @@ def encode(text, forest):
     bits = []
     last_char = ""
     for char in text:
-        bits += find_in_forest(forest, char,
-                               last_char if last_char in forest else "")
+        bits += find_in_forest(forest, char, last_char if last_char in forest else "")
         last_char = char
-    bits += find_in_forest(forest, "END",
-                           last_char if last_char in forest else "")
+    bits += find_in_forest(forest, "END", last_char if last_char in forest else "")
     return bits
 
 
@@ -80,8 +78,7 @@ def decode(bits, forest):
 def bits_to_bytes(bits):
     out = bytearray()
     for i in range((len(bits) + 7) // 8):
-        o = sum(bits[i * 8 + j] << (7 - j)
-                for j in range(min(8, len(bits) - i * 8)))
+        o = sum(bits[i * 8 + j] << (7 - j) for j in range(min(8, len(bits) - i * 8)))
         out.append(o)
 
     while len(out) > 0 and out[-1] == 0:
@@ -106,11 +103,9 @@ if __name__ == "__main__":
 
     orignal_stats = analyze_corpus([len(i) for i in corpus])
     compressed_stats = analyze_corpus([len(i) for i in corpus_coded])
-    difference = analyze_corpus([len(j) - len(i)
-                                for i, j in zip(corpus, corpus_coded)])
+    difference = analyze_corpus([len(j) - len(i) for i, j in zip(corpus, corpus_coded)])
     ratio = analyze_corpus(
-        [len(j) / max(1, len(i))
-         for i, j in zip(corpus, corpus_coded) if len(j) > 0]
+        [len(j) / max(1, len(i)) for i, j in zip(corpus, corpus_coded) if len(j) > 0]
     )
 
     print("                 Orig       Comp       Diff       Ratio")

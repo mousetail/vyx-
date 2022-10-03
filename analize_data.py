@@ -1,8 +1,8 @@
 import collections
 import json
 import math
-import unicodedata
 import typing
+import unicodedata
 
 vyxal_characters = """λƛ¬∧⟑∨⟇÷×«
 »°•ß†€½∆ø↔¢⌐æʀʁɾɽÞƈ∞¨ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]`^_abcdefghijklmnopqrstuvwxyz{|}~↑↓∴∵›‹∷¤ð→←βτȧḃċḋėḟġḣḭŀṁṅȯṗṙṡṫẇẋẏż√⟨⟩‛₀₁₂₃₄₅₆₇₈¶⁋§ε¡∑¦≈µȦḂĊḊĖḞĠḢİĿṀṄȮṖṘṠṪẆẊẎŻ₌₍⁰¹²∇⌈⌊¯±₴…□↳↲⋏⋎꘍ꜝ℅≤≥≠⁼ƒɖ∪∩⊍£¥⇧⇩ǍǎǏǐǑǒǓǔ⁽‡≬⁺↵⅛¼¾Π„‟"""  # noqa: E501
@@ -13,7 +13,7 @@ with open("code_json.json") as f:
     data = json.load(f)
 print(len(data))
 
-Tree = typing.Union[str, tuple['Tree', 'Tree']]
+Tree = typing.Union[str, tuple["Tree", "Tree"]]
 
 
 def get_sort_order(element: Tree, frequencies: dict[str, int]) -> int:
@@ -50,7 +50,9 @@ def escape_node(node: str) -> str:
     return node_escaped
 
 
-def print_tree_node(node: Tree, file: typing.IO, node_name: str, frequencies: dict[str, int], key: str):
+def print_tree_node(
+    node: Tree, file: typing.IO, node_name: str, frequencies: dict[str, int], key: str
+):
     if not isinstance(node, str):
         for index, i in enumerate(node):
             sub_node_name = print_tree_node(
