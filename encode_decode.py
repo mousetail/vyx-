@@ -73,8 +73,7 @@ def decode(bits, forest):
         elif isinstance(d, str):
             out += d
             d = forest[d if d in forest else '']
-    # if d not in forest.values():
-    #    raise ValueError(f"half character left over: {bits=} {out=} {d=}")
+
     return out
 
 
@@ -97,9 +96,6 @@ if __name__ == "__main__":
     corpus = get_original_data()
     tree = get_forest()
     corpus_coded = [bits_to_bytes(encode(i, tree)) for i in corpus]
-
-    print(bits_to_bytes(encode("₁ƛ₍₃₅kF½*∑∴", tree)))
-    exit()
 
     for program, coded_program in zip(corpus, corpus_coded):
         try:

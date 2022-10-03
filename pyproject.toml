@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "vyxμ"
+version = "0.1.0"
+description = "A huffman-tree based character encoding for vyxal"
+authors = ["Maurits van Riezen (mousetail) <mousetail@mousetail.nl>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.28.1"
+beautifulsoup4 = "^4.11.1"
+
+[tool.poetry.dev-dependencies]
+black = "^22.8.0"
+isort = "^5.10.1"
+flake8 = "^5.0.4"
+mypy = "^0.981"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
