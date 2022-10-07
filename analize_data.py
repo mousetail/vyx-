@@ -38,7 +38,7 @@ def build_tree(frequencies: dict[str, int]) -> Tree:
 
         frequencies = new_frequencies
         # print(frequencies.keys())
-    return typing.Cast(Tree, next(iter(frequencies.keys())))
+    return typing.cast(Tree, next(iter(frequencies.keys())))
 
 
 def escape_node(node: str) -> str:

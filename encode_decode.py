@@ -90,9 +90,7 @@ def bytes_to_bits(bytes):
     return [int(i) for b in bytes for i in f"{b:08b}"] + [0] * 8
 
 
-if __name__ == "__main__":
-    corpus = get_original_data()
-    tree = get_forest()
+def graph_data(corpus, tree):
     corpus_coded = [bits_to_bytes(encode(i, tree)) for i in corpus]
 
     for program, coded_program in zip(corpus, corpus_coded):
@@ -108,10 +106,27 @@ if __name__ == "__main__":
         [len(j) / max(1, len(i)) for i, j in zip(corpus, corpus_coded) if len(j) > 0]
     )
 
-    print("                 Orig       Comp       Diff       Ratio")
+    print(f"{len(corpus):>10}      Orig       Comp       Diff       Ratio")
     for key in orignal_stats.keys():
         print(
             f"{key:<10} {orignal_stats[key]:>10.2f} "
             f"{compressed_stats[key]:>10.2f} {difference[key]:>10.2f}"
             f"{ratio[key]:>10.4f}"
         )
+
+
+if __name__ == "__main__":
+    corpus = get_original_data()
+    tree = get_forest()
+
+    print("overall")
+    print(graph_data(corpus, tree))
+    print()
+    print("Short Programs (length < 10)")
+    print(graph_data([i for i in corpus if len(i) < 10], tree))
+    print()
+    print("Medium programs (10 <= length < 1)")
+    print(graph_data([i for i in corpus if 10 <= len(i) <= 100], tree))
+    print()
+    print("Long programs (100 <= length)")
+    print(graph_data([i for i in corpus if len(i) >= 100], tree))
