@@ -102,7 +102,7 @@ def bytes_to_bits(bytes: bytes) -> list[int]:
 def get_link(index):
     data = get_original_ids()[index]
     code = get_original_data()[index]
-    return f"https: // codegolf.stackexchange.com/questions/{data}"
+    return f"https://codegolf.stackexchange.com/questions/{data}"
 
 
 def gen_html_from_data(data, length, original_lengths):
