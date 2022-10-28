@@ -5,7 +5,7 @@ vyxal_characters = """λƛ¬∧⟑∨⟇÷×«
 »°•ß†€½∆ø↔¢⌐æʀʁɾɽÞƈ∞¨ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]`^_abcdefghijklmnopqrstuvwxyz{|}~↑↓∴∵›‹∷¤ð→←βτȧḃċḋėḟġḣḭŀṁṅȯṗṙṡṫẇẋẏż√⟨⟩‛₀₁₂₃₄₅₆₇₈¶⁋§ε¡∑¦≈µȦḂĊḊĖḞĠḢİĿṀṄȮṖṘṠṪẆẊẎŻ₌₍⁰¹²∇⌈⌊¯±₴…□↳↲⋏⋎꘍ꜝ℅≤≥≠⁼ƒɖ∪∩⊍£¥⇧⇩ǍǎǏǐǑǒǓǔ⁽‡≬⁺↵⅛¼¾Π„‟"""  # noqa: E501
 
 
-def analyze_corpus(lenghts):
+def analyze_corpus(lenghts: list[float]) -> dict[str, float]:
     return {
         "mean": statistics.mean(lenghts),
         "stdev": statistics.stdev(lenghts),
@@ -21,7 +21,7 @@ def analyze_corpus(lenghts):
     }
 
 
-def get_original_data():
+def get_original_data() -> list[str]:
     with open("code_json.json") as f:
         orignal_data = json.load(f)
     return ["".join(i for i in j if i in vyxal_characters) for j in orignal_data]
@@ -33,7 +33,7 @@ def get_forest():
     return tree
 
 
-def find_in_tree(tree, char):
+def find_in_tree(tree, char: str) -> typing.Optional[list[int]]:
     if tree == char:
         return []
     if isinstance(tree, str):
@@ -47,11 +47,11 @@ def find_in_tree(tree, char):
     return None
 
 
-def find_in_forest(forest, char, last_char=""):
+def find_in_forest(forest, char: str, last_char: str = "") -> typing.Optional[list[int]]:
     return find_in_tree(forest[last_char], char)
 
 
-def encode(text, forest):
+def encode(text: str, forest) -> typing.Optional[list[int]]:
     bits = []
     last_char = ""
     for char in text:
@@ -61,7 +61,7 @@ def encode(text, forest):
     return bits
 
 
-def decode(bits, forest):
+def decode(bits: list[int], forest) -> str:
     d = forest[""]
     out = ""
     for bit in bits:
@@ -75,7 +75,7 @@ def decode(bits, forest):
     return out
 
 
-def bits_to_bytes(bits):
+def bits_to_bytes(bits: list[int]) -> bytes:
     out = bytearray()
     for i in range((len(bits) + 7) // 8):
         o = sum(bits[i * 8 + j] << (7 - j) for j in range(min(8, len(bits) - i * 8)))
@@ -86,7 +86,7 @@ def bits_to_bytes(bits):
     return bytes(out)
 
 
-def bytes_to_bits(bytes):
+def bytes_to_bits(bytes: bytes) -> list[int]:
     return [int(i) for b in bytes for i in f"{b:08b}"] + [0] * 8
 
 
@@ -100,7 +100,7 @@ def gen_html_from_data(data, length):
     return o
 
 
-def graph_data(corpus, tree):
+def graph_data(corpus: list[str], tree):
     corpus_coded = [bits_to_bytes(encode(i, tree)) for i in corpus]
 
     for program, coded_program in zip(corpus, corpus_coded):
