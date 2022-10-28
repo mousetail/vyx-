@@ -92,7 +92,7 @@ def bytes_to_bits(bytes):
 
 def gen_html_from_data(data, length):
     o = f"| N={length} | Original |  Compressed | Difference | Ratio |\n" \
-        "| -- | -- | -- | -- | -- |"
+        "| -- | -- | -- | -- | -- |\n"
 
     for key in data[0].keys():
         o += f"| {key} |"+"".join(f" {d[key]:.2f} |" for d in data) + "\n"
