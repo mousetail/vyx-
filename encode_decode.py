@@ -25,7 +25,13 @@ def analyze_corpus(lenghts: list[float]) -> dict[str, float]:
 def get_original_data() -> list[str]:
     with open("code_json.json") as f:
         orignal_data = json.load(f)
-    return ["".join(i for i in j if i in vyxal_characters) for j in orignal_data]
+    return ["".join(i for i in j[1] if i in vyxal_characters) for j in orignal_data]
+
+
+def get_original_ids() -> list[int]:
+    with open("code_json.json") as f:
+        orignal_data = json.load(f)
+    return [j[0] for j in orignal_data]
 
 
 def get_forest():
@@ -93,14 +99,23 @@ def bytes_to_bits(bytes: bytes) -> list[int]:
     return [int(i) for b in bytes for i in f"{b:08b}"] + [0] * 8
 
 
-def gen_html_from_data(data, length):
+def get_link(index):
+    data = get_original_ids()[index]
+    return f"https://codegolf.stackexchange.com/questions/{data}"
+
+
+def gen_html_from_data(data, length, original_lengths):
     o = (
         f"| N={length} | Original |  Compressed | Difference | Ratio |\n"
         "| -- | -- | -- | -- | -- |\n"
     )
 
+    def closest_index(i, orig):
+        return min(range(len(orig)), key=lambda x: abs(orig[x]-i))
+
     for key in data[0].keys():
-        o += f"| {key} |" + "".join(f" {d[key]:.2f} |" for d in data) + "\n"
+        o += f"| {key} |" + "".join(f" [{d[key]:.2f}]({get_link(closest_index(d[key], d2))}) |" for d,
+                                    d2 in zip(data, original_lengths)) + "\n"
 
     return o
 
@@ -114,23 +129,27 @@ def graph_data(corpus: list[str], tree):
         except ValueError as ex:
             raise ValueError(*ex.args, program, coded_program)
 
-    orignal_stats = analyze_corpus([len(i) for i in corpus])
-    compressed_stats = analyze_corpus([len(i) for i in corpus_coded])
-    difference = analyze_corpus([len(j) - len(i) for i, j in zip(corpus, corpus_coded)])
-    ratio = analyze_corpus(
-        [len(j) / max(1, len(i)) for i, j in zip(corpus, corpus_coded) if len(j) > 0]
-    )
+    original_lengths = [len(i) for i in corpus]
+    compressed_lenghts = [len(i) for i in corpus_coded]
+    difference_lengths = [(j - i) for i, j in zip(original_lengths, compressed_lenghts)]
+    ratio_lenghts = [j/max(1, i) for i, j in zip(original_lengths, compressed_lenghts)]
+
+    orignal_stats = analyze_corpus(original_lengths)
+    compressed_stats = analyze_corpus(compressed_lenghts)
+    difference_stats = analyze_corpus(difference_lengths)
+    ratio_stats = analyze_corpus(ratio_lenghts)
 
     print(f"{len(corpus):>10}      Orig       Comp       Diff       Ratio")
     for key in orignal_stats.keys():
         print(
             f"{key:<10} {orignal_stats[key]:>10.2f} "
-            f"{compressed_stats[key]:>10.2f} {difference[key]:>10.2f}"
-            f"{ratio[key]:>10.4f}"
+            f"{compressed_stats[key]:>10.2f} {difference_stats[key]:>10.2f}"
+            f"{ratio_stats[key]:>10.4f}"
         )
 
     return gen_html_from_data(
-        [orignal_stats, compressed_stats, difference, ratio], len(corpus)
+        [orignal_stats, compressed_stats, difference_stats, ratio_stats], len(corpus),
+        [original_lengths, compressed_lenghts, difference_lengths, ratio_lenghts]
     )
 
 

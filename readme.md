@@ -12,65 +12,65 @@ Medium
 
 | N=1831 | Original |  Compressed | Difference | Ratio |
 | -- | -- | -- | -- | -- |
-| mean | 30.97 | 26.12 | -4.84 | 0.92 |
-| stdev | 191.10 | 131.25 | 92.76 | 0.09 |
-| min | 0.00 | 0.00 | -3680.00 | 0.13 |
-| 10% med | 4.00 | 3.00 | -3.00 | 0.80 |
-| 25% med | 6.00 | 5.00 | -1.00 | 0.87 |
-| median | 10.00 | 9.00 | -1.00 | 0.92 |
-| 75% med | 19.00 | 18.00 | 0.00 | 1.00 |
-| 90% med | 47.80 | 44.00 | 0.00 | 1.00 |
-| max | 6553.00 | 5131.00 | 37.00 | 1.18 |
-| min mode | 6.00 | 5.00 | -1.00 | 1.00 |
-| max mode | 6.00 | 5.00 | -1.00 | 1.00 |
+| mean | [30.97](https://codegolf.stackexchange.com/questions/253125) | [26.12](https://codegolf.stackexchange.com/questions/252105) | [-4.84](https://codegolf.stackexchange.com/questions/250567) | [0.91](https://codegolf.stackexchange.com/questions/229258) |
+| stdev | [191.10](https://codegolf.stackexchange.com/questions/235708) | [131.25](https://codegolf.stackexchange.com/questions/235748) | [92.76](https://codegolf.stackexchange.com/questions/226832) | [0.10](https://codegolf.stackexchange.com/questions/235671) |
+| min | [0.00](https://codegolf.stackexchange.com/questions/248661) | [0.00](https://codegolf.stackexchange.com/questions/248661) | [-3680.00](https://codegolf.stackexchange.com/questions/235671) | [0.00](https://codegolf.stackexchange.com/questions/248661) |
+| 10% med | [4.00](https://codegolf.stackexchange.com/questions/253500) | [3.00](https://codegolf.stackexchange.com/questions/253389) | [-3.00](https://codegolf.stackexchange.com/questions/253239) | [0.80](https://codegolf.stackexchange.com/questions/253476) |
+| 25% med | [6.00](https://codegolf.stackexchange.com/questions/253739) | [5.00](https://codegolf.stackexchange.com/questions/253720) | [-1.00](https://codegolf.stackexchange.com/questions/253794) | [0.87](https://codegolf.stackexchange.com/questions/251182) |
+| median | [10.00](https://codegolf.stackexchange.com/questions/251056) | [9.00](https://codegolf.stackexchange.com/questions/253810) | [-1.00](https://codegolf.stackexchange.com/questions/253794) | [0.92](https://codegolf.stackexchange.com/questions/253719) |
+| 75% med | [19.00](https://codegolf.stackexchange.com/questions/253068) | [18.00](https://codegolf.stackexchange.com/questions/253068) | [0.00](https://codegolf.stackexchange.com/questions/251056) | [1.00](https://codegolf.stackexchange.com/questions/251056) |
+| 90% med | [47.80](https://codegolf.stackexchange.com/questions/248228) | [44.00](https://codegolf.stackexchange.com/questions/248228) | [0.00](https://codegolf.stackexchange.com/questions/251056) | [1.00](https://codegolf.stackexchange.com/questions/251056) |
+| max | [6553.00](https://codegolf.stackexchange.com/questions/233768) | [5131.00](https://codegolf.stackexchange.com/questions/233768) | [37.00](https://codegolf.stackexchange.com/questions/226832) | [1.18](https://codegolf.stackexchange.com/questions/231315) |
+| min mode | [6.00](https://codegolf.stackexchange.com/questions/253739) | [5.00](https://codegolf.stackexchange.com/questions/253720) | [-1.00](https://codegolf.stackexchange.com/questions/253794) | [1.00](https://codegolf.stackexchange.com/questions/251056) |
+| max mode | [6.00](https://codegolf.stackexchange.com/questions/253739) | [5.00](https://codegolf.stackexchange.com/questions/253720) | [-1.00](https://codegolf.stackexchange.com/questions/253794) | [1.00](https://codegolf.stackexchange.com/questions/251056) |
 
 ## Short programs (length < 10)
 
 | N=908 | Original |  Compressed | Difference | Ratio |
 | -- | -- | -- | -- | -- |
-| mean | 5.66 | 5.16 | -0.50 | 0.91 |
-| stdev | 2.22 | 2.15 | 0.54 | 0.11 |
-| min | 0.00 | 0.00 | -2.00 | 0.50 |
-| 10% med | 3.00 | 2.00 | -1.00 | 0.75 |
-| 25% med | 4.00 | 3.00 | -1.00 | 0.83 |
-| median | 6.00 | 5.00 | 0.00 | 1.00 |
-| 75% med | 8.00 | 7.00 | 0.00 | 1.00 |
-| 90% med | 9.00 | 8.00 | 0.00 | 1.00 |
-| max | 9.00 | 9.00 | 1.00 | 1.12 |
-| min mode | 6.00 | 5.00 | 0.00 | 1.00 |
-| max mode | 6.00 | 5.00 | 0.00 | 1.00 |
+| mean | [5.66](https://codegolf.stackexchange.com/questions/253830) | [5.16](https://codegolf.stackexchange.com/questions/253771) | [-0.50](https://codegolf.stackexchange.com/questions/251056) | [0.90](https://codegolf.stackexchange.com/questions/253739) |
+| stdev | [2.22](https://codegolf.stackexchange.com/questions/253375) | [2.15](https://codegolf.stackexchange.com/questions/253395) | [0.54](https://codegolf.stackexchange.com/questions/250143) | [0.13](https://codegolf.stackexchange.com/questions/249642) |
+| min | [0.00](https://codegolf.stackexchange.com/questions/249642) | [0.00](https://codegolf.stackexchange.com/questions/249642) | [-2.00](https://codegolf.stackexchange.com/questions/253490) | [0.00](https://codegolf.stackexchange.com/questions/249642) |
+| 10% med | [3.00](https://codegolf.stackexchange.com/questions/253476) | [2.00](https://codegolf.stackexchange.com/questions/253395) | [-1.00](https://codegolf.stackexchange.com/questions/248543) | [0.75](https://codegolf.stackexchange.com/questions/253516) |
+| 25% med | [4.00](https://codegolf.stackexchange.com/questions/253730) | [3.00](https://codegolf.stackexchange.com/questions/253516) | [-1.00](https://codegolf.stackexchange.com/questions/248543) | [0.83](https://codegolf.stackexchange.com/questions/253771) |
+| median | [6.00](https://codegolf.stackexchange.com/questions/253830) | [5.00](https://codegolf.stackexchange.com/questions/253771) | [0.00](https://codegolf.stackexchange.com/questions/251056) | [1.00](https://codegolf.stackexchange.com/questions/251056) |
+| 75% med | [8.00](https://codegolf.stackexchange.com/questions/248543) | [7.00](https://codegolf.stackexchange.com/questions/248543) | [0.00](https://codegolf.stackexchange.com/questions/251056) | [1.00](https://codegolf.stackexchange.com/questions/251056) |
+| 90% med | [9.00](https://codegolf.stackexchange.com/questions/251056) | [8.00](https://codegolf.stackexchange.com/questions/253739) | [0.00](https://codegolf.stackexchange.com/questions/251056) | [1.00](https://codegolf.stackexchange.com/questions/251056) |
+| max | [9.00](https://codegolf.stackexchange.com/questions/251056) | [9.00](https://codegolf.stackexchange.com/questions/251056) | [1.00](https://codegolf.stackexchange.com/questions/250143) | [1.12](https://codegolf.stackexchange.com/questions/250143) |
+| min mode | [6.00](https://codegolf.stackexchange.com/questions/253830) | [5.00](https://codegolf.stackexchange.com/questions/253771) | [0.00](https://codegolf.stackexchange.com/questions/251056) | [1.00](https://codegolf.stackexchange.com/questions/251056) |
+| max mode | [6.00](https://codegolf.stackexchange.com/questions/253830) | [5.00](https://codegolf.stackexchange.com/questions/253771) | [0.00](https://codegolf.stackexchange.com/questions/251056) | [1.00](https://codegolf.stackexchange.com/questions/251056) |
 
 ## Medium programs (10 <= length < 100)
 
 | N=843 | Original |  Compressed | Difference | Ratio |
 | -- | -- | -- | -- | -- |
-| mean | 25.17 | 23.29 | -1.88 | 0.92 |
-| stdev | 18.77 | 17.59 | 2.65 | 0.06 |
-| min | 10.00 | 8.00 | -25.00 | 0.69 |
-| 10% med | 10.00 | 10.00 | -4.00 | 0.85 |
-| 25% med | 13.00 | 12.00 | -2.00 | 0.89 |
-| median | 18.00 | 16.00 | -1.00 | 0.92 |
-| 75% med | 30.00 | 28.00 | -1.00 | 0.96 |
-| 90% med | 52.60 | 49.00 | 0.00 | 1.00 |
-| max | 99.00 | 97.00 | 7.00 | 1.18 |
-| min mode | 10.00 | 10.00 | -1.00 | 1.00 |
-| max mode | 10.00 | 10.00 | -1.00 | 1.00 |
+| mean | [25.17](https://codegolf.stackexchange.com/questions/253131) | [23.29](https://codegolf.stackexchange.com/questions/253316) | [-1.88](https://codegolf.stackexchange.com/questions/253810) | [0.92](https://codegolf.stackexchange.com/questions/243926) |
+| stdev | [18.78](https://codegolf.stackexchange.com/questions/253395) | [17.59](https://codegolf.stackexchange.com/questions/253395) | [2.65](https://codegolf.stackexchange.com/questions/251234) | [0.06](https://codegolf.stackexchange.com/questions/248682) |
+| min | [10.00](https://codegolf.stackexchange.com/questions/251056) | [8.00](https://codegolf.stackexchange.com/questions/253313) | [-25.00](https://codegolf.stackexchange.com/questions/248682) | [0.69](https://codegolf.stackexchange.com/questions/248682) |
+| 10% med | [10.00](https://codegolf.stackexchange.com/questions/251056) | [10.00](https://codegolf.stackexchange.com/questions/251056) | [-4.00](https://codegolf.stackexchange.com/questions/248543) | [0.85](https://codegolf.stackexchange.com/questions/253496) |
+| 25% med | [13.00](https://codegolf.stackexchange.com/questions/253771) | [12.00](https://codegolf.stackexchange.com/questions/253830) | [-2.00](https://codegolf.stackexchange.com/questions/253810) | [0.89](https://codegolf.stackexchange.com/questions/253325) |
+| median | [18.00](https://codegolf.stackexchange.com/questions/253158) | [16.00](https://codegolf.stackexchange.com/questions/253432) | [-1.00](https://codegolf.stackexchange.com/questions/253771) | [0.92](https://codegolf.stackexchange.com/questions/253771) |
+| 75% med | [30.00](https://codegolf.stackexchange.com/questions/248435) | [28.00](https://codegolf.stackexchange.com/questions/253426) | [-1.00](https://codegolf.stackexchange.com/questions/253771) | [0.96](https://codegolf.stackexchange.com/questions/253316) |
+| 90% med | [52.60](https://codegolf.stackexchange.com/questions/246510) | [49.00](https://codegolf.stackexchange.com/questions/252010) | [0.00](https://codegolf.stackexchange.com/questions/251056) | [1.00](https://codegolf.stackexchange.com/questions/251056) |
+| max | [99.00](https://codegolf.stackexchange.com/questions/248999) | [97.00](https://codegolf.stackexchange.com/questions/248867) | [7.00](https://codegolf.stackexchange.com/questions/241593) | [1.18](https://codegolf.stackexchange.com/questions/247353) |
+| min mode | [10.00](https://codegolf.stackexchange.com/questions/251056) | [10.00](https://codegolf.stackexchange.com/questions/251056) | [-1.00](https://codegolf.stackexchange.com/questions/253771) | [1.00](https://codegolf.stackexchange.com/questions/251056) |
+| max mode | [10.00](https://codegolf.stackexchange.com/questions/251056) | [10.00](https://codegolf.stackexchange.com/questions/251056) | [-1.00](https://codegolf.stackexchange.com/questions/253771) | [1.00](https://codegolf.stackexchange.com/questions/251056) |
 
 ## Long programs (100 <= length)
 
 | N=80 | Original |  Compressed | Difference | Ratio |
 | -- | -- | -- | -- | -- |
-| mean | 379.29 | 293.89 | -85.40 | 0.92 |
-| stdev | 843.56 | 563.87 | 438.58 | 0.15 |
-| min | 102.00 | 77.00 | -3680.00 | 0.13 |
-| 10% med | 120.00 | 108.00 | -85.60 | 0.77 |
-| 25% med | 145.25 | 129.75 | -35.50 | 0.83 |
-| median | 222.00 | 207.50 | -15.00 | 0.89 |
-| 75% med | 270.75 | 268.75 | 10.50 | 1.06 |
-| 90% med | 545.10 | 476.80 | 19.00 | 1.08 |
-| max | 6553.00 | 5131.00 | 37.00 | 1.09 |
-| min mode | 250.00 | 108.00 | 18.00 | 1.07 |
-| max mode | 250.00 | 108.00 | 18.00 | 1.07 |
+| mean | [379.29](https://codegolf.stackexchange.com/questions/253240) | [293.89](https://codegolf.stackexchange.com/questions/253191) | [-85.40](https://codegolf.stackexchange.com/questions/253189) | [0.92](https://codegolf.stackexchange.com/questions/253738) |
+| stdev | [843.56](https://codegolf.stackexchange.com/questions/253537) | [563.87](https://codegolf.stackexchange.com/questions/253339) | [438.58](https://codegolf.stackexchange.com/questions/253244) | [0.15](https://codegolf.stackexchange.com/questions/253339) |
+| min | [102.00](https://codegolf.stackexchange.com/questions/253154) | [77.00](https://codegolf.stackexchange.com/questions/253517) | [-3680.00](https://codegolf.stackexchange.com/questions/253339) | [0.13](https://codegolf.stackexchange.com/questions/253339) |
+| 10% med | [120.00](https://codegolf.stackexchange.com/questions/253496) | [108.00](https://codegolf.stackexchange.com/questions/253738) | [-85.60](https://codegolf.stackexchange.com/questions/253189) | [0.77](https://codegolf.stackexchange.com/questions/248543) |
+| 25% med | [145.25](https://codegolf.stackexchange.com/questions/253348) | [129.75](https://codegolf.stackexchange.com/questions/253255) | [-35.50](https://codegolf.stackexchange.com/questions/253719) | [0.83](https://codegolf.stackexchange.com/questions/253193) |
+| median | [222.00](https://codegolf.stackexchange.com/questions/253420) | [207.50](https://codegolf.stackexchange.com/questions/253268) | [-15.00](https://codegolf.stackexchange.com/questions/253311) | [0.89](https://codegolf.stackexchange.com/questions/253516) |
+| 75% med | [270.75](https://codegolf.stackexchange.com/questions/253719) | [268.75](https://codegolf.stackexchange.com/questions/253503) | [10.50](https://codegolf.stackexchange.com/questions/253394) | [1.06](https://codegolf.stackexchange.com/questions/253720) |
+| 90% med | [545.10](https://codegolf.stackexchange.com/questions/253389) | [476.80](https://codegolf.stackexchange.com/questions/253244) | [19.00](https://codegolf.stackexchange.com/questions/253313) | [1.08](https://codegolf.stackexchange.com/questions/253420) |
+| max | [6553.00](https://codegolf.stackexchange.com/questions/253336) | [5131.00](https://codegolf.stackexchange.com/questions/253336) | [37.00](https://codegolf.stackexchange.com/questions/253244) | [1.09](https://codegolf.stackexchange.com/questions/253430) |
+| min mode | [250.00](https://codegolf.stackexchange.com/questions/253500) | [108.00](https://codegolf.stackexchange.com/questions/253738) | [18.00](https://codegolf.stackexchange.com/questions/253503) | [1.07](https://codegolf.stackexchange.com/questions/253503) |
+| max mode | [250.00](https://codegolf.stackexchange.com/questions/253500) | [108.00](https://codegolf.stackexchange.com/questions/253738) | [18.00](https://codegolf.stackexchange.com/questions/253503) | [1.07](https://codegolf.stackexchange.com/questions/253500) |
 <!-- END AUTOGENERATED TABLE -->
 
 Saves around 4-5 bytes on average (but with huge variability), does nothing most of the time. Occasionally make the program slightly longer. More savings for long programs but still a small average reduction even for very short programs.

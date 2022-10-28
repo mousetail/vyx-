@@ -10,7 +10,7 @@ vyxal_characters = """λƛ¬∧⟑∨⟇÷×«
 special_chars = "ø∆Þk¨⇧"
 
 with open("code_json.json") as f:
-    data = json.load(f)
+    data = [i[1] for i in json.load(f)]
 print(len(data))
 
 Tree = typing.Union[str, tuple["Tree", "Tree"]]

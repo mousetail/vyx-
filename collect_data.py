@@ -11,7 +11,7 @@ vyxal_characters = """'Jk\xaf\u01d4\u1e03\u0226"2=%/\u1e44\u2026\xa3D\u1e8bY.\u2
 post_filter: str = "!7gW7W8.hCz.w3RaMu5gZJ)KKPzO4pFALfq"
 page_size = 30
 
-if True:
+if False:
     page = 1
     with open("post_ids.txt", "w") as f:
         items: list[dict] = [{}]
@@ -39,7 +39,7 @@ if True:
 
 
 with open("post_ids.txt") as f:
-    posts: list[str] = []
+    posts: list[tuple[int, str]] = []
     ids: list[int] = []
 
     nr_raw = 0
@@ -57,7 +57,6 @@ with open("post_ids.txt") as f:
 
             ids.append(post_id)
             nr_filtered += 1
-        print()
     print(len(ids), (len(ids) + 99) // 100)
     for i in range((len(ids) + page_size - 1) // page_size):
         res = requests.get(
@@ -72,14 +71,14 @@ with open("post_ids.txt") as f:
             print(f'warning: loaded only {len(data["items"])=} items')
             # exit()
 
-        for post in data["items"]:
+        for index, post in enumerate(data["items"]):
             parsed_content = BeautifulSoup(post["body"], "html.parser")
             code_elements = [
                 *parsed_content.select("pre code"),
                 *parsed_content.select("code"),
             ]
             if len(code_elements) >= 1:
-                posts.append(code_elements[0].string or "")
+                posts.append((ids[i * page_size + index], code_elements[0].string or ""))
                 nr_with_code += 1
 
             else:
