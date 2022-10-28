@@ -31,12 +31,12 @@ def build_tree(
     frequencies: dict[str, int], last_letter_frequencies: dict[str, int]
 ) -> Tree:
     while len(frequencies) > 1:
-        new_frequencies = frequencies.copy()
+        new_frequencies: dict[str | tuple[str, str], float] = frequencies.copy()
         least_two = sorted(frequencies, key=lambda i: frequencies[i])[:2]
         least_two.sort(key=lambda i: get_sort_order(i, last_letter_frequencies))
         del new_frequencies[least_two[0]]
         del new_frequencies[least_two[1]]
-        new_frequencies[tuple(least_two)] = (
+        new_frequencies[typing.cast(tuple[str, str], tuple(least_two))] = (
             frequencies[least_two[0]] + frequencies[least_two[1]]
         )
 
@@ -109,8 +109,8 @@ def print_tree(tree: dict[str, Tree], frequencies: dict[str, dict[str, int]]):
         f.write("}")
 
 
-frequencies = {i: collections.Counter() for i in [""] + list(special_chars)}
-last_letter_frequencies = collections.Counter()
+frequencies: dict[str, dict[str, int]] = {i: collections.Counter() for i in [""] + list(special_chars)}
+last_letter_frequencies: dict[str, int] = collections.Counter()
 for special_char in [""] + list(special_chars):
     for char in vyxal_characters:
         frequencies[special_char][char] += 1

@@ -55,12 +55,12 @@ def find_in_forest(
 
 
 def encode(text: str, forest) -> typing.Optional[list[int]]:
-    bits = []
+    bits: list[int] = []
     last_char = ""
     for char in text:
-        bits += find_in_forest(forest, char, last_char if last_char in forest else "")
+        bits += find_in_forest(forest, char, last_char if last_char in forest else "") or []
         last_char = char
-    bits += find_in_forest(forest, "END", last_char if last_char in forest else "")
+    bits += find_in_forest(forest, "END", last_char if last_char in forest else "") or []
     return bits
 
 
@@ -106,7 +106,7 @@ def gen_html_from_data(data, length):
 
 
 def graph_data(corpus: list[str], tree):
-    corpus_coded = [bits_to_bytes(encode(i, tree)) for i in corpus]
+    corpus_coded = [bits_to_bytes(encode(i, tree) or []) for i in corpus]
 
     for program, coded_program in zip(corpus, corpus_coded):
         try:
