@@ -28,7 +28,7 @@ if True:
             )
 
             print(response)
-            if (response.status_code > 299):
+            if response.status_code > 299:
                 print(response.json())
 
             items = response.json()["items"]
@@ -62,7 +62,7 @@ with open("post_ids.txt") as f:
     for i in range((len(ids) + page_size - 1) // page_size):
         res = requests.get(
             "https://api.stackexchange.com/2.3/answers/"
-            + ";".join(str(i) for i in ids[i * page_size: i * page_size + page_size]),
+            + ";".join(str(i) for i in ids[i * page_size : i * page_size + page_size]),
             params={"key": api_key, "site": "codegolf", "filter": post_filter},
         )
 

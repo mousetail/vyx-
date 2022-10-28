@@ -47,7 +47,9 @@ def find_in_tree(tree, char: str) -> typing.Optional[list[int]]:
     return None
 
 
-def find_in_forest(forest, char: str, last_char: str = "") -> typing.Optional[list[int]]:
+def find_in_forest(
+    forest, char: str, last_char: str = ""
+) -> typing.Optional[list[int]]:
     return find_in_tree(forest[last_char], char)
 
 
@@ -91,11 +93,13 @@ def bytes_to_bits(bytes: bytes) -> list[int]:
 
 
 def gen_html_from_data(data, length):
-    o = f"| N={length} | Original |  Compressed | Difference | Ratio |\n" \
+    o = (
+        f"| N={length} | Original |  Compressed | Difference | Ratio |\n"
         "| -- | -- | -- | -- | -- |\n"
+    )
 
     for key in data[0].keys():
-        o += f"| {key} |"+"".join(f" {d[key]:.2f} |" for d in data) + "\n"
+        o += f"| {key} |" + "".join(f" {d[key]:.2f} |" for d in data) + "\n"
 
     return o
 
@@ -124,9 +128,9 @@ def graph_data(corpus: list[str], tree):
             f"{ratio[key]:>10.4f}"
         )
 
-    return gen_html_from_data([
-        orignal_stats, compressed_stats, difference, ratio
-    ], len(corpus))
+    return gen_html_from_data(
+        [orignal_stats, compressed_stats, difference, ratio], len(corpus)
+    )
 
 
 if __name__ == "__main__":
@@ -160,4 +164,4 @@ if __name__ == "__main__":
     end_pos = readme.index(end_marker)
 
     with open("readme.md", "w", encoding="utf-8") as f:
-        f.write(readme[:start_pos]+o+readme[end_pos:])
+        f.write(readme[:start_pos] + o + readme[end_pos:])

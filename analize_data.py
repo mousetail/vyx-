@@ -22,10 +22,14 @@ def get_sort_order(element: Tree, last_letter_frequencies: dict[str, int]) -> in
     elif isinstance(element, tuple):
         return get_sort_order(element[0], last_letter_frequencies)
     else:
-        return sum(last_letter_frequencies.values()) - last_letter_frequencies[element] + 1
+        return (
+            sum(last_letter_frequencies.values()) - last_letter_frequencies[element] + 1
+        )
 
 
-def build_tree(frequencies: dict[str, int], last_letter_frequencies: dict[str, int]) -> Tree:
+def build_tree(
+    frequencies: dict[str, int], last_letter_frequencies: dict[str, int]
+) -> Tree:
     while len(frequencies) > 1:
         new_frequencies = frequencies.copy()
         least_two = sorted(frequencies, key=lambda i: frequencies[i])[:2]
@@ -137,7 +141,9 @@ for program in data:
 
 
 print(frequencies)
-tree = {i: build_tree(frequencies[i], last_letter_frequencies) for i in frequencies.keys()}
+tree = {
+    i: build_tree(frequencies[i], last_letter_frequencies) for i in frequencies.keys()
+}
 # print("tree", tree)
 print_tree(tree, frequencies)
 
