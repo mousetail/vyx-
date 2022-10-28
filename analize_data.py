@@ -16,20 +16,20 @@ print(len(data))
 Tree = typing.Union[str, tuple["Tree", "Tree"]]
 
 
-def get_sort_order(element: Tree, frequencies: dict[str, int]) -> int:
+def get_sort_order(element: Tree, last_letter_frequencies: dict[str, int]) -> int:
     if element == "END":
         return 0
     elif isinstance(element, tuple):
-        return get_sort_order(element[0], frequencies)
+        return get_sort_order(element[0], last_letter_frequencies)
     else:
-        return sum(frequencies.values()) - frequencies[element] + 1
+        return sum(last_letter_frequencies.values()) - last_letter_frequencies[element] + 1
 
 
-def build_tree(frequencies: dict[str, int]) -> Tree:
+def build_tree(frequencies: dict[str, int], last_letter_frequencies: dict[str, int]) -> Tree:
     while len(frequencies) > 1:
         new_frequencies = frequencies.copy()
         least_two = sorted(frequencies, key=lambda i: frequencies[i])[:2]
-        least_two.sort(key=lambda i: get_sort_order(i, frequencies))
+        least_two.sort(key=lambda i: get_sort_order(i, last_letter_frequencies))
         del new_frequencies[least_two[0]]
         del new_frequencies[least_two[1]]
         new_frequencies[tuple(least_two)] = (
@@ -106,6 +106,7 @@ def print_tree(tree: dict[str, Tree], frequencies: dict[str, dict[str, int]]):
 
 
 frequencies = {i: collections.Counter() for i in [""] + list(special_chars)}
+last_letter_frequencies = collections.Counter()
 for special_char in [""] + list(special_chars):
     for char in vyxal_characters:
         frequencies[special_char][char] += 1
@@ -124,6 +125,8 @@ for program in data:
             else:
                 frequencies[""][char] += 1
             last_char = char
+    if last_char:
+        last_letter_frequencies[last_char] += 1
     # if last_char in special_chars:
     #     frequencies[last_char]["END"] += 1
     # else:
@@ -134,7 +137,7 @@ for program in data:
 
 
 print(frequencies)
-tree = {i: build_tree(frequencies[i]) for i in frequencies.keys()}
+tree = {i: build_tree(frequencies[i], last_letter_frequencies) for i in frequencies.keys()}
 # print("tree", tree)
 print_tree(tree, frequencies)
 
