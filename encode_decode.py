@@ -101,7 +101,8 @@ def bytes_to_bits(bytes: bytes) -> list[int]:
 
 def get_link(index):
     data = get_original_ids()[index]
-    return f"https://codegolf.stackexchange.com/questions/{data}"
+    code = get_original_data()[index]
+    return f"https: // codegolf.stackexchange.com/questions/{data}"
 
 
 def gen_html_from_data(data, length, original_lengths):
@@ -148,7 +149,8 @@ def graph_data(corpus: list[str], tree):
         )
 
     return gen_html_from_data(
-        [orignal_stats, compressed_stats, difference_stats, ratio_stats], len(corpus),
+        [orignal_stats, compressed_stats, difference_stats, ratio_stats],
+        len(corpus),
         [original_lengths, compressed_lenghts, difference_lengths, ratio_lenghts]
     )
 

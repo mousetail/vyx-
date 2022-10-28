@@ -11,7 +11,7 @@ vyxal_characters = """'Jk\xaf\u01d4\u1e03\u0226"2=%/\u1e44\u2026\xa3D\u1e8bY.\u2
 post_filter: str = "!7gW7W8.hCz.w3RaMu5gZJ)KKPzO4pFALfq"
 page_size = 30
 
-if False:
+if True:
     page = 1
     with open("post_ids.txt", "w") as f:
         items: list[dict] = [{}]
@@ -78,7 +78,7 @@ with open("post_ids.txt") as f:
                 *parsed_content.select("code"),
             ]
             if len(code_elements) >= 1:
-                posts.append((ids[i * page_size + index], code_elements[0].string or ""))
+                posts.append((ids[i * page_size + index], "".join(code_elements[0].strings)))
                 nr_with_code += 1
 
             else:
